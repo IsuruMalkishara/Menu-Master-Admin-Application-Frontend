@@ -25,6 +25,7 @@ public class BusinessServiceImpl implements BusinessService {
 
     @Override
     public Business getUserByEmail(String email) {
+        log.info(email);
         business=businessRepository.findAll().stream().filter(b->email.contains(b.getEmail())).collect(Collectors.toList());
     return business.get(0);
     }
